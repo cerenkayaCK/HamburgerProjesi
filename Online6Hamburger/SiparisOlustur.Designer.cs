@@ -55,10 +55,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(42, 25);
+            pictureBox1.Location = new Point(29, 19);
             pictureBox1.Margin = new Padding(4, 3, 4, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(321, 139);
+            pictureBox1.Size = new Size(342, 139);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -69,7 +69,7 @@
             cboMenu.Location = new Point(28, 198);
             cboMenu.Margin = new Padding(4, 3, 4, 3);
             cboMenu.Name = "cboMenu";
-            cboMenu.Size = new Size(355, 24);
+            cboMenu.Size = new Size(343, 24);
             cboMenu.TabIndex = 1;
             cboMenu.SelectedIndexChanged += cboMenu_SelectedIndexChanged;
             // 
@@ -105,11 +105,11 @@
             grpBoyut.Controls.Add(radioORTA);
             grpBoyut.Controls.Add(radioKucuk);
             grpBoyut.Font = new Font("Segoe MDL2 Assets", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            grpBoyut.Location = new Point(28, 239);
+            grpBoyut.Location = new Point(29, 236);
             grpBoyut.Margin = new Padding(4, 3, 4, 3);
             grpBoyut.Name = "grpBoyut";
             grpBoyut.Padding = new Padding(4, 3, 4, 3);
-            grpBoyut.Size = new Size(355, 75);
+            grpBoyut.Size = new Size(342, 75);
             grpBoyut.TabIndex = 4;
             grpBoyut.TabStop = false;
             grpBoyut.Text = "BOYUT SEÇİNİZ";
@@ -144,7 +144,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe MDL2 Assets", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(13, 317);
+            label2.Location = new Point(28, 314);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(133, 19);
@@ -154,7 +154,7 @@
             // ADET
             // 
             ADET.AutoSize = true;
-            ADET.Location = new Point(421, 348);
+            ADET.Location = new Point(431, 349);
             ADET.Margin = new Padding(4, 0, 4, 0);
             ADET.Name = "ADET";
             ADET.Size = new Size(38, 16);
@@ -163,19 +163,19 @@
             // 
             // numericAdet
             // 
-            numericAdet.Location = new Point(467, 346);
+            numericAdet.Location = new Point(477, 347);
             numericAdet.Margin = new Padding(4, 3, 4, 3);
             numericAdet.Name = "numericAdet";
-            numericAdet.Size = new Size(130, 23);
+            numericAdet.Size = new Size(99, 23);
             numericAdet.TabIndex = 13;
             // 
             // btnSiparisEkle
             // 
             btnSiparisEkle.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSiparisEkle.Location = new Point(387, 415);
+            btnSiparisEkle.Location = new Point(421, 389);
             btnSiparisEkle.Margin = new Padding(4, 3, 4, 3);
             btnSiparisEkle.Name = "btnSiparisEkle";
-            btnSiparisEkle.Size = new Size(123, 26);
+            btnSiparisEkle.Size = new Size(86, 26);
             btnSiparisEkle.TabIndex = 14;
             btnSiparisEkle.Text = "Sipariş Ekle";
             btnSiparisEkle.UseVisualStyleBackColor = true;
@@ -185,7 +185,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(518, 421);
+            label3.Location = new Point(518, 395);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(99, 15);
@@ -198,7 +198,7 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.Red;
-            label4.Location = new Point(579, 438);
+            label4.Location = new Point(559, 420);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(38, 15);
@@ -208,7 +208,7 @@
             // flpEkstraMalzemeler
             // 
             flpEkstraMalzemeler.BackColor = Color.Transparent;
-            flpEkstraMalzemeler.Location = new Point(13, 339);
+            flpEkstraMalzemeler.Location = new Point(28, 336);
             flpEkstraMalzemeler.Name = "flpEkstraMalzemeler";
             flpEkstraMalzemeler.Size = new Size(343, 121);
             flpEkstraMalzemeler.TabIndex = 17;
@@ -218,9 +218,9 @@
             // 
             lstMevcutSiparisler.FormattingEnabled = true;
             lstMevcutSiparisler.ItemHeight = 16;
-            lstMevcutSiparisler.Location = new Point(408, 25);
+            lstMevcutSiparisler.Location = new Point(408, 19);
             lstMevcutSiparisler.Name = "lstMevcutSiparisler";
-            lstMevcutSiparisler.Size = new Size(209, 260);
+            lstMevcutSiparisler.Size = new Size(209, 292);
             lstMevcutSiparisler.TabIndex = 18;
             // 
             // SiparisOlustur
