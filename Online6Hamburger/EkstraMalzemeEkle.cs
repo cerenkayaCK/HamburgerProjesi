@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,8 @@ namespace Online6Hamburger
 
         private void btnEkstraMalzemeyiKaydet_Click(object sender, EventArgs e)
         {
+            SiparisOlustur.Ekstralar.Add(new Ekstra { EkstraAdi = txtEkstraMalzemeAdi.Text, Fiyat = numericEkstraMalzemeFiyat.Value });
+            MessageBox.Show("ekstra malzeme eklendi.");
 
         }
     }

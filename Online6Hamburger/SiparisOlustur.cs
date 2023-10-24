@@ -53,29 +53,6 @@ namespace Online6Hamburger
 
         }
 
-        private void btnSiparisEkle_Click(object sender, EventArgs e)
-        {
-            Siparis siparis = new Siparis();
-            siparis.SecilenMenu = (Menu)cboMenu.SelectedItem;
-
-            if (radioBuyuk.Checked)
-                siparis.Boyut = Boyut.Buyuk;
-            if (radioKucuk.Checked)
-                siparis.Boyut = Boyut.Kucuk;
-            if (radioORTA.Checked)
-                siparis.Boyut = Boyut.Orta;
-
-
-            siparis.EkstraMalzeme = new List<Ekstra>();
-
-
-        }
-
-        private void MalzemeCheckBox_CheckedChanged(object? sender, EventArgs e)
-        {
-
-        }
-
         private void SiparisOlustur_Load(object sender, EventArgs e)
         {
             foreach (var item in Menuler)
@@ -103,6 +80,37 @@ namespace Online6Hamburger
             }
         }
 
+        private void btnSiparisEkle_Click(object sender, EventArgs e)
+        {
+            Siparis siparis = new Siparis();
+            siparis.SecilenMenu = (Menu)cboMenu.SelectedItem;
+
+            if (radioBuyuk.Checked)
+                siparis.Boyut = Boyut.Buyuk;
+            if (radioKucuk.Checked)
+                siparis.Boyut = Boyut.Kucuk;
+            if (radioORTA.Checked)
+                siparis.Boyut = Boyut.Orta;
+
+
+            //siparis.EkstraMalzeme = new List<Ekstra>();
+            //foreach (var item in flpEkstraMalzemeler.Controls)
+            //{
+            //    if (item.Checked)
+            //    {
+            //        siparis.EkstraMalzeme.Add((Ekstra)item.Tag);
+            //    }
+            //}
+
+
+        }
+
+        private void MalzemeCheckBox_CheckedChanged(object? sender, EventArgs e)
+        {
+
+        }
+
+     
         private void flpEkstraMalzemeler_Paint(object sender, PaintEventArgs e)
         {
 

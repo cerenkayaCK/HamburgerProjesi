@@ -30,6 +30,10 @@ namespace Online6Hamburger
 
         private void btnMenuyuKaydet_Click(object sender, EventArgs e)
         {
+            SiparisOlustur.Menuler.Add(new Menu { Ad = txtMenuAdi.Text,Fiyat=numericEklenenMenuFiyat.Value });
+
+            MessageBox.Show("Ekstra malzeme başarı ile eklendi.");
+
 
 
         }
