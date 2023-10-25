@@ -113,25 +113,22 @@ namespace Online6Hamburger
 
                 if (item.Checked)
                     siparis.EkstraMalzeme.Add((Ekstra)item.Tag);
-
             }
+
+
             if ((radioKucuk.Checked || radioBuyuk.Checked || radioORTA.Checked) && cboMenu.SelectedIndex != -1 && siparis.Adet > 0)
             {
                 MevcutSiparisler.Add(siparis);
                 tumSiparisler.Add(siparis);
-                lstMevcutSiparisler.Items.Add(siparis);
+                SiparisleriListele();
+               
                 siparis.ToplamTutar = siparis.Hesapla();  //listboxta her ürünün fiyat açıklaması da bulunacak. 
 
-                     toplam += siparis.Hesapla();
-                     lblToplam.Text = "₺" + toplam.ToString();
+                toplam += siparis.Hesapla();
+                lblToplam.Text = "₺" + toplam.ToString(); //en aşağıda toplam tutar yazan kısımda tüm siparişlerin toplamını gösterir.
             }
-
-
-
-            //en aşağıda toplam tutar yazan kısımda tüm siparişlerin toplamını gösterir.
-
-
         }
+
         private void btnYeniSiparis_Click(object sender, EventArgs e)
         {
             lstMevcutSiparisler.Items.Clear();
@@ -141,7 +138,29 @@ namespace Online6Hamburger
 
         }
 
-      
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if(lstMevcutSiparisler.SelectedItem != null)
+            {
+                Siparis silinecekOlanSiparis = (Siparis)lstMevcutSiparisler.SelectedItem;
+                MevcutSiparisler.Remove(silinecekOlanSiparis);
+                SiparisleriListele();
+                toplam = toplam - silinecekOlanSiparis.Hesapla();
+                lblToplam.Text = "₺" + toplam.ToString();
+                tumSiparisler.Remove(silinecekOlanSiparis);
+                
+
+            }
+          
+        }
+        private void SiparisleriListele()
+        {
+            lstMevcutSiparisler.Items.Clear();
+            foreach (var item in MevcutSiparisler)
+            {
+                lstMevcutSiparisler.Items.Add(item);
+            }
+        }
     }
 
 }

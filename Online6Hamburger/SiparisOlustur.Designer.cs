@@ -47,6 +47,7 @@
             flpEkstraMalzemeler = new FlowLayoutPanel();
             lstMevcutSiparisler = new ListBox();
             btnYeniSiparis = new Button();
+            btnSil = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             grpBoyut.SuspendLayout();
@@ -155,7 +156,7 @@
             // ADET
             // 
             ADET.AutoSize = true;
-            ADET.Location = new Point(459, 314);
+            ADET.Location = new Point(453, 339);
             ADET.Margin = new Padding(4, 0, 4, 0);
             ADET.Name = "ADET";
             ADET.Size = new Size(38, 16);
@@ -164,7 +165,7 @@
             // 
             // numericAdet
             // 
-            numericAdet.Location = new Point(505, 312);
+            numericAdet.Location = new Point(499, 337);
             numericAdet.Margin = new Padding(4, 3, 4, 3);
             numericAdet.Name = "numericAdet";
             numericAdet.Size = new Size(99, 23);
@@ -173,7 +174,7 @@
             // btnSiparisEkle
             // 
             btnSiparisEkle.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSiparisEkle.Location = new Point(421, 367);
+            btnSiparisEkle.Location = new Point(424, 373);
             btnSiparisEkle.Margin = new Padding(4, 3, 4, 3);
             btnSiparisEkle.Name = "btnSiparisEkle";
             btnSiparisEkle.Size = new Size(86, 26);
@@ -220,11 +221,11 @@
             lstMevcutSiparisler.ColumnWidth = 10;
             lstMevcutSiparisler.Font = new Font("Segoe MDL2 Assets", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lstMevcutSiparisler.FormattingEnabled = true;
+            lstMevcutSiparisler.ImeMode = ImeMode.NoControl;
             lstMevcutSiparisler.ItemHeight = 16;
             lstMevcutSiparisler.Location = new Point(396, 19);
-            lstMevcutSiparisler.MultiColumn = true;
             lstMevcutSiparisler.Name = "lstMevcutSiparisler";
-            lstMevcutSiparisler.Size = new Size(237, 276);
+            lstMevcutSiparisler.Size = new Size(237, 260);
             lstMevcutSiparisler.TabIndex = 18;
             // 
             // btnYeniSiparis
@@ -237,11 +238,22 @@
             btnYeniSiparis.UseVisualStyleBackColor = true;
             btnYeniSiparis.Click += btnYeniSiparis_Click;
             // 
+            // btnSil
+            // 
+            btnSil.Location = new Point(396, 285);
+            btnSil.Name = "btnSil";
+            btnSil.Size = new Size(237, 26);
+            btnSil.TabIndex = 20;
+            btnSil.Text = "Sipariş Sil";
+            btnSil.UseVisualStyleBackColor = true;
+            btnSil.Click += btnSil_Click;
+            // 
             // SiparisOlustur
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(645, 472);
+            Controls.Add(btnSil);
             Controls.Add(btnYeniSiparis);
             Controls.Add(lstMevcutSiparisler);
             Controls.Add(lblToplam);
@@ -294,5 +306,6 @@
         private CheckBox chkHardall;
         public ListBox lstMevcutSiparisler;
         private Button btnYeniSiparis;
+        private Button btnSil;
     }
 }
