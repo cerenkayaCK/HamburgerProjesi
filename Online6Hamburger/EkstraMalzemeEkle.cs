@@ -21,7 +21,7 @@ namespace Online6Hamburger
         private void btnEkstraMalzemeyiKaydet_Click(object sender, EventArgs e)
         {
             SiparisOlustur.Ekstralar.Add(new Ekstra { EkstraAdi = txtEkstraMalzemeAdi.Text, Fiyat = numericEkstraMalzemeFiyat.Value });
-            MessageBox.Show("ekstra malzeme eklendi.");
+            MessageBox.Show("Ekstra malzeme eklendi.");
 
         }
     }

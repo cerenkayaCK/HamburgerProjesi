@@ -33,7 +33,7 @@
             groupBox1 = new GroupBox();
             lblCiro = new Label();
             groupBox2 = new GroupBox();
-            label3 = new Label();
+            lblToplamSiparis = new Label();
             groupBox3 = new GroupBox();
             lblEkstraMalzemeGeliri = new Label();
             groupBox1.SuspendLayout();
@@ -59,6 +59,7 @@
             lstTumSiparisler.Name = "lstTumSiparisler";
             lstTumSiparisler.Size = new Size(264, 280);
             lstTumSiparisler.TabIndex = 1;
+            lstTumSiparisler.SelectedIndexChanged += lstTumSiparisler_SelectedIndexChanged;
             // 
             // groupBox1
             // 
@@ -82,7 +83,7 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(label3);
+            groupBox2.Controls.Add(lblToplamSiparis);
             groupBox2.Location = new Point(303, 118);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(200, 61);
@@ -90,15 +91,15 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "TOPLAM SİPARİŞ SAYISI";
             // 
-            // label3
+            // lblToplamSiparis
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe MDL2 Assets", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(18, 27);
-            label3.Name = "label3";
-            label3.Size = new Size(14, 16);
-            label3.TabIndex = 0;
-            label3.Text = "0";
+            lblToplamSiparis.AutoSize = true;
+            lblToplamSiparis.Font = new Font("Segoe MDL2 Assets", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblToplamSiparis.Location = new Point(18, 27);
+            lblToplamSiparis.Name = "lblToplamSiparis";
+            lblToplamSiparis.Size = new Size(14, 16);
+            lblToplamSiparis.TabIndex = 0;
+            lblToplamSiparis.Text = "0";
             // 
             // groupBox3
             // 
@@ -124,7 +125,7 @@
             // 
             AutoScaleDimensions = new SizeF(6F, 12F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(531, 360);
+            ClientSize = new Size(522, 357);
             Controls.Add(groupBox2);
             Controls.Add(groupBox3);
             Controls.Add(groupBox1);
@@ -134,6 +135,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "SiparisBilgileri";
             Text = "SiparisBilgileri";
+            Load += SiparisBilgileri_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -150,7 +152,7 @@
         private GroupBox groupBox1;
         private Label lblCiro;
         private GroupBox groupBox2;
-        private Label label3;
+        private Label lblToplamSiparis;
         private GroupBox groupBox3;
         private Label lblEkstraMalzemeGeliri;
         public ListBox lstTumSiparisler;

@@ -43,9 +43,10 @@
             numericAdet = new NumericUpDown();
             btnSiparisEkle = new Button();
             label3 = new Label();
-            label4 = new Label();
+            lblToplam = new Label();
             flpEkstraMalzemeler = new FlowLayoutPanel();
             lstMevcutSiparisler = new ListBox();
+            btnYeniSiparis = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             grpBoyut.SuspendLayout();
@@ -154,7 +155,7 @@
             // ADET
             // 
             ADET.AutoSize = true;
-            ADET.Location = new Point(431, 349);
+            ADET.Location = new Point(459, 314);
             ADET.Margin = new Padding(4, 0, 4, 0);
             ADET.Name = "ADET";
             ADET.Size = new Size(38, 16);
@@ -163,7 +164,7 @@
             // 
             // numericAdet
             // 
-            numericAdet.Location = new Point(477, 347);
+            numericAdet.Location = new Point(505, 312);
             numericAdet.Margin = new Padding(4, 3, 4, 3);
             numericAdet.Name = "numericAdet";
             numericAdet.Size = new Size(99, 23);
@@ -172,7 +173,7 @@
             // btnSiparisEkle
             // 
             btnSiparisEkle.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSiparisEkle.Location = new Point(421, 389);
+            btnSiparisEkle.Location = new Point(421, 367);
             btnSiparisEkle.Margin = new Padding(4, 3, 4, 3);
             btnSiparisEkle.Name = "btnSiparisEkle";
             btnSiparisEkle.Size = new Size(86, 26);
@@ -185,51 +186,65 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(518, 395);
+            label3.Location = new Point(518, 373);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(99, 15);
             label3.TabIndex = 15;
             label3.Text = "TOPLAM TUTAR:";
             // 
-            // label4
+            // lblToplam
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.Red;
-            label4.Location = new Point(559, 420);
-            label4.Margin = new Padding(4, 0, 4, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(38, 15);
-            label4.TabIndex = 16;
-            label4.Text = "₺0,00";
+            lblToplam.AutoSize = true;
+            lblToplam.BackColor = Color.Transparent;
+            lblToplam.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblToplam.ForeColor = Color.Red;
+            lblToplam.Location = new Point(576, 388);
+            lblToplam.Margin = new Padding(4, 0, 4, 0);
+            lblToplam.Name = "lblToplam";
+            lblToplam.Size = new Size(41, 15);
+            lblToplam.TabIndex = 16;
+            lblToplam.Text = "₺ 0.00";
             // 
             // flpEkstraMalzemeler
             // 
             flpEkstraMalzemeler.BackColor = Color.Transparent;
-            flpEkstraMalzemeler.Location = new Point(28, 336);
+            flpEkstraMalzemeler.Location = new Point(28, 339);
             flpEkstraMalzemeler.Name = "flpEkstraMalzemeler";
             flpEkstraMalzemeler.Size = new Size(343, 121);
             flpEkstraMalzemeler.TabIndex = 17;
-            flpEkstraMalzemeler.Paint += flpEkstraMalzemeler_Paint;
             // 
             // lstMevcutSiparisler
             // 
+            lstMevcutSiparisler.BackColor = SystemColors.Window;
+            lstMevcutSiparisler.ColumnWidth = 10;
+            lstMevcutSiparisler.Font = new Font("Segoe MDL2 Assets", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lstMevcutSiparisler.FormattingEnabled = true;
             lstMevcutSiparisler.ItemHeight = 16;
-            lstMevcutSiparisler.Location = new Point(408, 19);
+            lstMevcutSiparisler.Location = new Point(396, 19);
+            lstMevcutSiparisler.MultiColumn = true;
             lstMevcutSiparisler.Name = "lstMevcutSiparisler";
-            lstMevcutSiparisler.Size = new Size(209, 292);
+            lstMevcutSiparisler.Size = new Size(237, 276);
             lstMevcutSiparisler.TabIndex = 18;
+            // 
+            // btnYeniSiparis
+            // 
+            btnYeniSiparis.Location = new Point(421, 415);
+            btnYeniSiparis.Name = "btnYeniSiparis";
+            btnYeniSiparis.Size = new Size(196, 31);
+            btnYeniSiparis.TabIndex = 19;
+            btnYeniSiparis.Text = "Yeni Sipariş";
+            btnYeniSiparis.UseVisualStyleBackColor = true;
+            btnYeniSiparis.Click += btnYeniSiparis_Click;
             // 
             // SiparisOlustur
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(645, 472);
+            Controls.Add(btnYeniSiparis);
             Controls.Add(lstMevcutSiparisler);
-            Controls.Add(label4);
+            Controls.Add(lblToplam);
             Controls.Add(label3);
             Controls.Add(btnSiparisEkle);
             Controls.Add(numericAdet);
@@ -238,8 +253,8 @@
             Controls.Add(label1);
             Controls.Add(cboMenu);
             Controls.Add(pictureBox1);
-            Controls.Add(flpEkstraMalzemeler);
             Controls.Add(label2);
+            Controls.Add(flpEkstraMalzemeler);
             Font = new Font("Segoe MDL2 Assets", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4, 3, 4, 3);
             Name = "SiparisOlustur";
@@ -273,10 +288,11 @@
         private NumericUpDown numericAdet;
         private Button btnSiparisEkle;
         private Label label3;
-        private Label label4;
+        private Label lblToplam;
         public ComboBox cboMenu;
         private FlowLayoutPanel flpEkstraMalzemeler;
-        private ListBox lstMevcutSiparisler;
         private CheckBox chkHardall;
+        public ListBox lstMevcutSiparisler;
+        private Button btnYeniSiparis;
     }
 }

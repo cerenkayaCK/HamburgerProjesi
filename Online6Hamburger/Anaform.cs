@@ -6,7 +6,7 @@ namespace Online6Hamburger
 {
     public partial class Anaform : Form
     {
-        
+
         public Anaform()
         {
             InitializeComponent();
@@ -14,7 +14,7 @@ namespace Online6Hamburger
         public void FormGoster(Form secilenForm)
         {
             secilenForm.StartPosition = 0;
-            bool durum = false; // en baþta ana formun hiç ocuðu olmadýðý için foreach e girmez o yzden deðikenini tanýmladýk.
+            bool durum = false; // en baþta ana formun hiç çocuðu olmadýðý için foreach e girmez o yzden deðikenini tanýmladýk.
 
             //bu ana formun çocuklarý içerisinde gezelim
             foreach (Form form in this.MdiChildren) //Çocuðu olunca buraya girer.
@@ -44,13 +44,13 @@ namespace Online6Hamburger
             FormGoster(new SiparisOlustur());
         }
 
-        
+
 
         private void menüEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          
-        FormGoster(new MenuEkle());
-        } 
+
+            FormGoster(new MenuEkle());
+        }
 
         private void SiparisBilgileri_Click(object sender, EventArgs e)
         {

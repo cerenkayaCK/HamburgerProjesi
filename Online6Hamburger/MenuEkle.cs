@@ -32,7 +32,7 @@ namespace Online6Hamburger
         {
             SiparisOlustur.Menuler.Add(new Menu { Ad = txtMenuAdi.Text,Fiyat=numericEklenenMenuFiyat.Value });
 
-            MessageBox.Show("Ekstra malzeme başarı ile eklendi.");
+            MessageBox.Show("Menü başarı ile eklendi.");
 
 
 

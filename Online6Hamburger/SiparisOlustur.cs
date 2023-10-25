@@ -14,14 +14,17 @@ namespace Online6Hamburger
 {
     public partial class SiparisOlustur : Form
     {
-
         public SiparisOlustur()
         {
             InitializeComponent();
+
             if (cboMenu.SelectedIndex == -1)
             { cboMenu.Text = "BİR MENÜ SEÇİNİZ."; }
+            lstMevcutSiparisler.Items.AddRange(MevcutSiparisler.ToArray());
 
         }
+
+        decimal toplam = 0;
 
         public static List<Siparis> tumSiparisler = new List<Siparis>();
         public static List<Siparis> MevcutSiparisler = new List<Siparis>();
@@ -73,17 +76,18 @@ namespace Online6Hamburger
                 }
 
             }
-            foreach (Siparis item in MevcutSiparisler)
+            foreach (var item in MevcutSiparisler)
             {
-                lstMevcutSiparisler.Items.Add(item);
-
+                toplam += item.Hesapla();
             }
+            lblToplam.Text = "₺" + toplam.ToString();
         }
-
         private void btnSiparisEkle_Click(object sender, EventArgs e)
         {
             Siparis siparis = new Siparis();
             siparis.SecilenMenu = (Menu)cboMenu.SelectedItem;
+            if (siparis.SecilenMenu == null)
+                MessageBox.Show("Lütfen bir menü seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             if (radioBuyuk.Checked)
                 siparis.Boyut = Boyut.Buyuk;
@@ -92,28 +96,53 @@ namespace Online6Hamburger
             if (radioORTA.Checked)
                 siparis.Boyut = Boyut.Orta;
 
+            if (!(radioKucuk.Checked || radioBuyuk.Checked || radioORTA.Checked))
+            {
+                MessageBox.Show("Lütfen bir boyut seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-            //siparis.EkstraMalzeme = new List<Ekstra>();
-            //foreach (var item in flpEkstraMalzemeler.Controls)
-            //{
-            //    if (item.Checked)
-            //    {
-            //        siparis.EkstraMalzeme.Add((Ekstra)item.Tag);
-            //    }
-            //}
+            }
+            siparis.Adet = (int)numericAdet.Value;
+            if (siparis.Adet == 0)
+            { MessageBox.Show("Lütfen adet seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+
+
+            siparis.EkstraMalzeme = new List<Ekstra>();
+
+            foreach (CheckBox item in flpEkstraMalzemeler.Controls)
+            {
+
+                if (item.Checked)
+                    siparis.EkstraMalzeme.Add((Ekstra)item.Tag);
+
+            }
+            if ((radioKucuk.Checked || radioBuyuk.Checked || radioORTA.Checked) && cboMenu.SelectedIndex != -1 && siparis.Adet > 0)
+            {
+                MevcutSiparisler.Add(siparis);
+                tumSiparisler.Add(siparis);
+                lstMevcutSiparisler.Items.Add(siparis);
+                siparis.ToplamTutar = siparis.Hesapla();  //listboxta her ürünün fiyat açıklaması da bulunacak. 
+
+                     toplam += siparis.Hesapla();
+                     lblToplam.Text = "₺" + toplam.ToString();
+            }
+
+
+
+            //en aşağıda toplam tutar yazan kısımda tüm siparişlerin toplamını gösterir.
 
 
         }
-
-        private void MalzemeCheckBox_CheckedChanged(object? sender, EventArgs e)
+        private void btnYeniSiparis_Click(object sender, EventArgs e)
         {
+            lstMevcutSiparisler.Items.Clear();
+            MevcutSiparisler.Clear();
+            lblToplam.Text = "₺ 0.00";
+            toplam = 0;
 
         }
 
-     
-        private void flpEkstraMalzemeler_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+      
     }
+
 }
+

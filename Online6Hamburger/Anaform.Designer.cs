@@ -44,7 +44,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 3, 0, 3);
-            menuStrip1.Size = new Size(777, 25);
+            menuStrip1.Size = new Size(668, 25);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -58,14 +58,14 @@
             // siparişOluşturToolStripMenuItem
             // 
             siparişOluşturToolStripMenuItem.Name = "siparişOluşturToolStripMenuItem";
-            siparişOluşturToolStripMenuItem.Size = new Size(150, 22);
+            siparişOluşturToolStripMenuItem.Size = new Size(180, 22);
             siparişOluşturToolStripMenuItem.Text = "Sipariş Oluştur";
             siparişOluşturToolStripMenuItem.Click += siparişOluşturToolStripMenuItem_Click;
             // 
             // SiparisBilgileri
             // 
             SiparisBilgileri.Name = "SiparisBilgileri";
-            SiparisBilgileri.Size = new Size(150, 22);
+            SiparisBilgileri.Size = new Size(180, 22);
             SiparisBilgileri.Text = "Sipariş Bilgileri";
             SiparisBilgileri.Click += SiparisBilgileri_Click;
             // 
@@ -94,7 +94,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(777, 404);
+            ClientSize = new Size(668, 529);
             Controls.Add(menuStrip1);
             Font = new Font("Segoe MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
             IsMdiContainer = true;
